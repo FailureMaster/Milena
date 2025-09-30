@@ -443,44 +443,6 @@
         });
 
      
-        // Remove Google Translate banner
-function removeGoogleTranslateBanner() {
-    var banner = document.querySelector('.goog-te-banner-frame');
-    if (banner) {
-        banner.style.display = 'none';
-        document.body.style.top = '0';
-    }
-    
-    // Also check for iframe
-    var iframe = document.querySelector('iframe.skiptranslate');
-    if (iframe) {
-        iframe.style.display = 'none';
-    }
-}
-
-// Run on page load and after a delay
-window.addEventListener('load', function() {
-    removeGoogleTranslateBanner();
-    setTimeout(removeGoogleTranslateBanner, 1000);
-    setTimeout(removeGoogleTranslateBanner, 2000);
-});
-
-// Hide Google Translate top bar after it loads
-window.addEventListener('DOMContentLoaded', function() {
-    var checkTimer = setInterval(function() {
-        var banner = document.querySelector('.goog-te-banner-frame');
-        if (banner) {
-            banner.style.display = 'none';
-            document.body.style.top = '0';
-            clearInterval(checkTimer);
-        }
-    }, 100);
-    
-    // Stop checking after 5 seconds
-    setTimeout(function() {
-        clearInterval(checkTimer);
-    }, 5000);
-});
 
     </script>
 
